@@ -1,0 +1,21 @@
+{
+    "name": "aping/pdding-robot",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aping",
+            "email": "czp010443@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aping\\PddingRobot\\": "src/"
+        }
+    }
+}
