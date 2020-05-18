@@ -137,7 +137,7 @@ class Fast
         $btns = [];
 
         foreach ($btnInfo as $btn) {
-            if (isset($btn['title']) && $btn['actionURL']) {
+            if (isset($btn['title'], $btn['actionURL'])) {
                 $btns[] = new Btn($btn['title'], $btn['actionURL']);
             }
         }
@@ -160,7 +160,7 @@ class Fast
         $links = [];
 
         foreach ($linkInfo as $link) {
-            if (isset($link['title']) && $link['messageUrl'] && $link['picUrl']) {
+            if (isset($link['title'], $link['messageUrl'], $link['picUrl'])) {
                 $links[] = new Link($link['title'], $link['messageUrl'], $link['picUrl']);
             }
         }
