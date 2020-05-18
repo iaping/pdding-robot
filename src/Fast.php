@@ -21,14 +21,20 @@ use Aping\PddingRobot\Messages\Types\TextType;
 class Fast
 {
     /**
-     * @var Fast
-     */
-    private static $instance;
-
-    /**
      * @var DingRobot
      */
     private $robot;
+
+    /**
+     * Fast constructor.
+     *
+     * @param string $token
+     * @param string $secret
+     */
+    public function __construct(string $token, string $secret)
+    {
+        $this->robot = new DingRobot($token, $secret);
+    }
 
     /**
      * @param string $token 机器人token
@@ -37,11 +43,7 @@ class Fast
      */
     public static function new(string $token, string $secret)
     {
-        if (! static::$instance instanceof static) {
-            static::$instance = new static($token, $secret);
-        }
-
-        return static::$instance;
+        return new static($token, $secret);
     }
 
     /**
@@ -169,18 +171,5 @@ class Fast
 
         return $this->robot->send($message);
     }
-
-    /**
-     * Fast constructor.
-     *
-     * @param string $token
-     * @param string $secret
-     */
-    private function __construct(string $token, string $secret)
-    {
-        $this->robot = new DingRobot($token, $secret);
-    }
-
-    private function __clone() {}
 
 }
