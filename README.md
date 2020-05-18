@@ -17,7 +17,7 @@ php composer.phar require aping/pdding-robot
 
 ## Usage
 ```php
-$fast = \Aping\PddingRobot\Fast::new('机器人TOKEN', '签名');
+$fast = \Aping\PddingRobot\Fast::new('机器人TOKEN', '签名密钥');
 //text类型
 $fast->sendText('Hello World');
 //link类型
